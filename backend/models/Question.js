@@ -5,9 +5,9 @@ const questionSchema = new mongoose.Schema({
   tags: [],
   created_at: {
     type: Date,
-    default: Date.now()
+    default: Date.now(),
   },
-  user:Object,
+  user: Object,
   comment_id: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "Comments"

@@ -7,7 +7,7 @@ const answerSchema = new mongoose. Schema({
   answer: String,
   created_at: {
     type: Date,
-    default: Date.now()
+    default: Date.now(),
   },
   user:Object,
   comment_id: {
