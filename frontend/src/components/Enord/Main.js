@@ -1,11 +1,11 @@
 import React from "react";
-import FilterListIcon from "@material-ui/icons/FilterList";
+import {FilterList} from "@mui/icons-material";
 import "./css/Main.css";
 import AllQuestions from "./AllQuestions";
 import { Link } from "react-router-dom";
 // import axios from "axios";
 
-function Main( ) {
+function Main({questions}) {
   // const [questions, setQuestions] = useState([]);
 
   // console.log(questions);
@@ -21,7 +21,7 @@ function Main( ) {
           {/* </a> */}
         </div>
         <div className="main-desc">
-          <p>All question List</p>
+          <p>{questions && questions.length} Questions</p>
           <div className="main-filter">
             <div className="main-tabs">
               <div className="main-tab">
@@ -39,28 +39,16 @@ function Main( ) {
               </div>
             </div>
             <div className="main-filter-item">
-              <FilterListIcon />
+              <FilterList />
               <p>Filter</p>
             </div>
           </div>
         </div>
         <div className="questions">
-          {/* {questions?.map((_q) => ( */}
-            <div className="question">
-              <AllQuestions />
-              <AllQuestions />
-              <AllQuestions />
-              <AllQuestions />
-              <AllQuestions />
-              {/* <AllQuestions />
-              <AllQuestions />
-              <AllQuestions />
-              <AllQuestions />
-              <AllQuestions /> */}
-
-              {/* data={_q}   All questions ke andr jayega ye*/} 
-            </div>
-          {/* ))} */}
+            {questions?.map((_q,index) => (<><div key ={index} className="question">
+              <AllQuestions question = {_q}/>
+            </div></>
+            ))}
         </div>
       </div>
     </div>

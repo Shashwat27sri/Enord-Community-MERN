@@ -2,18 +2,35 @@ import React from "react";
 import Sidebar from "./Sidebar";
 import "./css/index.css";
 import Main from "./Main";
+import axios from 'axios'
 
 
-function index() {
+function Index() {
+
+  const [questions, setQuestions] = React.useState([])
+  
+  React.useEffect(() => {
+    async function getQuestion(){
+      await axios.get('/api/question')
+      .then((res) =>{
+        console.log(res.data)
+        setQuestions(res.data.reverse())
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+    }
+    getQuestion()
+  }, []);
 
   return (
     <div className="stack-index">
       <div className="stack-index-content">
         <Sidebar />
-        <Main />
+        <Main questions= {questions}/>
       </div>
     </div>
   );
 }
 
-export default index;
+export default Index;
