@@ -1,5 +1,5 @@
 const express = require('express')
-const cors = require('express')
+const cors = require('cors')
 const path= require('path')
 const app = express()
 const bodyParser = require('body-parser')
@@ -20,9 +20,9 @@ app.use(express.json())
 
 //header
 app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', "*")
-  res.header('Access-Control-Allow-Headers', "*")
-  next()  
+  res.header('Access-Control-Allow-Origin', "*");
+  res.header('Access-Control-Allow-Headers', "*");
+  next();
 })
 
 //api

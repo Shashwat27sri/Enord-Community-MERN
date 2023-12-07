@@ -8,7 +8,6 @@ router.post('/', async(req,res) => {
   const questionData = new QuestionDB({
     title: req.body.title,
     body: req.body.body,
-    tags: req.body.tag,
     user: req.body.user
   })
 
@@ -106,7 +105,7 @@ router.get("/:id", async (req,res) => {
   try{
     QuestionDB.aggregate([
       {
-        $match: { _id: mongoose.Types.ObjectId(req.params.id) },
+        $match: { _id:  mongoose.Types.ObjectId(req.params.id) },
       },
       {
         $lookup: {
