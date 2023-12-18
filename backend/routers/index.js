@@ -5,7 +5,7 @@ const answerRouter = require('./Answers')
 const commentRouter = require('./Comment')
 
 router.get('/', (req, res) => {
-  res.send("Welcome to Enord Community API")
+  res.send("Welcome to Knowledge Hub API")
 })
 
 router.use('/question', questionRouter);

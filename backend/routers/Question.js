@@ -105,7 +105,7 @@ router.get("/:id", async (req,res) => {
   try{
     QuestionDB.aggregate([
       {
-        $match: { _id:  mongoose.Types.ObjectId(req.params.id) },
+        $match: { _id: mongoose.Types.ObjectId(req.params.id)},
       },
       {
         $lookup: {

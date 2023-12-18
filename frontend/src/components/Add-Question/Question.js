@@ -72,19 +72,7 @@ function Question() {
                             <ReactQuill value = {body} onChange={handleQuill} className='react-quill' theme='snow'/>
                             </div>
                     </div>
-                    <div className="question-option">
-                        <div className="title"><h3>
-                            Tags
-                            </h3>
-                            <small> 
-                                Add up to 5 tags to describe what your 
-                                question is about
-                                  </small>
-                                  {/* <TagsInput value = {tags} onChange={setTags} name="tags" 
-                                  placeHolder='pres enter to add new tag' /> */}
-                            
-                        </div>
-                    </div> 
+                    
                 </div>
             </div>
             <button disabled={loading} type="submit" onClick={handleSubmit} className="button" >{

@@ -33,7 +33,7 @@ function AllQuestions({question}) {
           </div>
         </div>
         <div className="question-answer">
-          <Link to='/question'>{question?.title}
+          <Link to={`/question?q=${question?._id}`} >{question?.title}
           </Link>
           {/* {data.title}  link ke andr ka cont. */}
           {/* to={`/question?q=${data?._id}`} left link ke baad ka */}
